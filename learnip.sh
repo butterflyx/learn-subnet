@@ -5,7 +5,7 @@
 #
 # random string: https://tldp.org/LDP/abs/html/randomvar.html
 #
-# @author: Jean-Christoph von Oertzen <jean@jeanchristophvonoertzen.com>
+# @author: Jean-Christoph von Oertzen
 #
 #
 # set color constants for output
