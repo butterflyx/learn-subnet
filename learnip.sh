@@ -35,7 +35,7 @@ task=${tasks[$((RANDOM%num_tasks))]}
 myip="`shuf -i 1-233 -n 1`.`shuf -i 0-255 -n 1`.`shuf -i 0-255 -n 1`.`shuf -i 0-255 -n 1`";
 subnet="`shuf -i 8-32 -n 1`";
 
-if [ ! -f ./lib/ipcalc ]; then
+if [ ! -f ./lib/ipcalc ] || [ "${Timer}" = "" ]; then
     Timer=""
 	link="http://jodies.de/ipcalc?host=${myip}&mask1=${subnet}&mask2=";
 fi
@@ -63,6 +63,7 @@ echo ""
 
 if [[ ! -z $Timer ]];then
 	echo -e "time until solution will be displayed: ${Timer} ............"
+	echo ""
 	sleep $Timer
 	./lib/ipcalc ${myip}/${subnet}
 else
